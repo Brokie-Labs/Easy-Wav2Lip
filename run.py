@@ -67,8 +67,8 @@ working_directory = os.getcwd()
 
 start_time = time.time()
 
-video_file = video_file.strip('"')
-vocal_file = vocal_file.strip('"')
+video_file = 'video_file.mp4'
+vocal_file = 'audio_file.wav'
 
 # check video_file exists
 if video_file == "":
