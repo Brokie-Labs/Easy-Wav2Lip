@@ -729,19 +729,19 @@ def main():
 
             f[y1:y2, x1:x2] = p
 
-            if not g_colab:
-                # Display the frame
-                if preview_window == "Face":
-                    cv2.imshow("face preview - press Q to abort", p)
-                elif preview_window == "Full":
-                    cv2.imshow("full preview - press Q to abort", f)
-                elif preview_window == "Both":
-                    cv2.imshow("face preview - press Q to abort", p)
-                    cv2.imshow("full preview - press Q to abort", f)
+            # if not g_colab:
+            #     # Display the frame
+            #     if preview_window == "Face":
+            #         cv2.imshow("face preview - press Q to abort", p)
+            #     elif preview_window == "Full":
+            #         cv2.imshow("full preview - press Q to abort", f)
+            #     elif preview_window == "Both":
+            #         cv2.imshow("face preview - press Q to abort", p)
+            #         cv2.imshow("full preview - press Q to abort", f)
 
-                key = cv2.waitKey(1) & 0xFF
-                if key == ord('q'):
-                    exit()  # Exit the loop when 'Q' is pressed
+            #     key = cv2.waitKey(1) & 0xFF
+            #     if key == ord('q'):
+            #         exit()  # Exit the loop when 'Q' is pressed
 
             if str(args.preview_settings) == "True":
                 cv2.imwrite("temp/preview.jpg", f)
