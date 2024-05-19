@@ -1,5 +1,7 @@
 __pycache__/
-checkpoints/Wav2Lip_GAN.pth
+gfpgan/
+checkpoints/
 easy_wav2lip/
 models/__pycache__/
 easy_wav2lip/
+installed.txt
