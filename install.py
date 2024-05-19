@@ -1,14 +1,10 @@
 version = 'v8.3'
 
 import os
-import re
-import argparse
 import shutil
 import subprocess
-from IPython.display import clear_output
 
-from easy_functions import (format_time,
-                            load_file_from_url,
+from easy_functions import (load_file_from_url,
                             load_model,
                             load_predictor)
                             # Get the location of the basicsr package
@@ -41,7 +37,6 @@ def move_and_replace_file_to_basicsr(file_name):
 # Example usage
 file_to_replace = 'degradations.py'  # Replace with your file name
 move_and_replace_file_to_basicsr(file_to_replace)
-
 
 from enhance import load_sr
 

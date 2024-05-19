@@ -1,0 +1,5 @@
+__pycache__/
+checkpoints/Wav2Lip_GAN.pth
+easy_wav2lip/
+models/__pycache__/
+easy_wav2lip/
