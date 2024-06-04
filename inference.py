@@ -487,7 +487,7 @@ def face_detect(images, results_file="last_detected_face.pkl"):
     ):
         if rect is None:
             cv2.imwrite(
-                "temp/faulty_frame.jpg", image
+                "Easy-Wav2Lip/temp/faulty_frame.jpg", image
             )  # check this frame where the face was not detected.
             raise ValueError(
                 "Face not detected! Ensure the video contains a face in all the frames."
@@ -637,10 +637,10 @@ def main():
                 "error",
                 "-i",
                 args.audio,
-                "temp/temp.wav",
+                "Easy-Wav2Lip/temp/temp.wav",
             ]
         )
-        args.audio = "temp/temp.wav"
+        args.audio = "Easy-Wav2Lip/temp/temp.wav"
 
     print("analysing audio...")
     wav = audio.load_wav(args.audio, 16000)
@@ -694,7 +694,8 @@ def main():
             print("Starting...")
             frame_h, frame_w = full_frames[0].shape[:-1]
             fourcc = cv2.VideoWriter_fourcc(*"mp4v")
-            out = cv2.VideoWriter("temp/result.mp4", fourcc, fps, (frame_w, frame_h))
+            os.makedirs("Easy-Wav2Lip/temp", exist_ok=True)
+            out = cv2.VideoWriter("Easy-Wav2Lip/temp/result.mp4", fourcc, fps, (frame_w, frame_h))
 
         img_batch = torch.FloatTensor(np.transpose(img_batch, (0, 3, 1, 2))).to(device)
         mel_batch = torch.FloatTensor(np.transpose(mel_batch, (0, 3, 1, 2))).to(device)
@@ -744,7 +745,7 @@ def main():
             #         exit()  # Exit the loop when 'Q' is pressed
 
             if str(args.preview_settings) == "True":
-                cv2.imwrite("temp/preview.jpg", f)
+                cv2.imwrite("Easy-Wav2Lip/temp/preview.jpg", f)
                 if not g_colab:
                     cv2.imshow("preview - press Q to close", f)
                     if cv2.waitKey(-1) & 0xFF == ord('q'):
@@ -767,7 +768,7 @@ def main():
             "-loglevel",
             "error",
             "-i",
-            "temp/result.mp4",
+            "Easy-Wav2Lip/temp/result.mp4",
             "-i",
             args.audio,
             "-c:v",
