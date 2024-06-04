@@ -236,10 +236,10 @@ parser.add_argument(
     default="Fast",
 )
 
-with open(os.path.join("checkpoints", "predictor.pkl"), "rb") as f:
+with open(os.path.join("Easy-Wav2Lip/checkpoints", "predictor.pkl"), "rb") as f:
     predictor = pickle.load(f)
 
-with open(os.path.join("checkpoints", "mouth_detector.pkl"), "rb") as f:
+with open(os.path.join("Easy-Wav2Lip/checkpoints", "mouth_detector.pkl"), "rb") as f:
     mouth_detector = pickle.load(f)
 
 # creating variables to prevent failing when a face isn't detected
