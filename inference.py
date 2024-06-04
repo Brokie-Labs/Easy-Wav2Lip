@@ -247,17 +247,17 @@ kernel = last_mask = x = y = w = h = None
 
 g_colab = g_colab()
 
-if not g_colab:
-  # Load the config file
-  config = configparser.ConfigParser()
-  config.read('config.ini')
+# if not g_colab:
+#   # Load the config file
+#   config = configparser.ConfigParser()
+#   config.read('config.ini')
 
-  # Get the value of the "preview_window" variable
-  preview_window = config.get('OPTIONS', 'preview_window')
+#   # Get the value of the "preview_window" variable
+#   preview_window = config.get('OPTIONS', 'preview_window')
 
-all_mouth_landmarks = []
+# all_mouth_landmarks = []
 
-model = detector = detector_model = None
+# model = detector = detector_model = None
 
 def do_load(checkpoint_path):
     global model, detector, detector_model
