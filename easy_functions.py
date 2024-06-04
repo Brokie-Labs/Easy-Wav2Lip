@@ -92,9 +92,9 @@ def load_model(path):
     folder, filename_with_extension = os.path.split(path)
     filename, file_type = os.path.splitext(filename_with_extension)
     results_file = os.path.join(folder, filename + ".pk1")
-    if os.path.exists(results_file):
-        with open(results_file, "rb") as f:
-            return pickle.load(f)
+    # if os.path.exists(results_file):
+    #     with open(results_file, "rb") as f:
+    #         return pickle.load(f)
     model = Wav2Lip()
     print("Loading {}".format(path))
     checkpoint = _load(path)
