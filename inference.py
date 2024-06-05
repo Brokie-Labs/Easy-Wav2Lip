@@ -79,7 +79,7 @@ parser.add_argument(
 parser.add_argument(
     "--segmentation_path",
     type=str,
-    default="checkpoints/face_segmentation.pth",
+    default="Easy-Wav2Lip/checkpoints/face_segmentation.pth",
     help="Name of saved checkpoint of segmentation network",
     required=False,
 )
@@ -263,7 +263,7 @@ def do_load(checkpoint_path):
     global model, detector, detector_model
     model = load_model(checkpoint_path)
     detector = RetinaFace(
-        gpu_id=gpu_id, model_path="checkpoints/mobilenet.pth", network="mobilenet"
+        gpu_id=gpu_id, model_path="Easy-Wav2Lip/checkpoints/mobilenet.pth", network="mobilenet"
     )
     detector_model = detector.model
 
