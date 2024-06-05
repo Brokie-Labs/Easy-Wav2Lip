@@ -629,6 +629,7 @@ def main():
 
     if not args.audio.endswith(".wav"):
         print("Converting audio to .wav")
+        os.makedirs("Easy-Wav2Lip/temp", exist_ok=True)
         subprocess.check_call(
             [
                 "ffmpeg",
